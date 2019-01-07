@@ -1,0 +1,7 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <variables>
+    <variable type="" id=":lN}/GS1`Mbz7%AXBBzy">light</variable>
+  </variables>
+  <block type="pxt-on-start" x="0" y="0"></block>
+  <block type="device_forever" x="205" y="0"></block>
+</xml>
