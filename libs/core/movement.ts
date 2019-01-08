@@ -169,7 +169,7 @@ namespace forward {
 
     /*some parameters used for controlling the turn and length of the ServoLite board controlled :MOVE mini */
     const microSecInASecond = 1000000
-    const diam = 2.2*25.4;
+    const diam = 2.25*25.4;
     let distancePerSec = diam*3.14;
 
     //%blockId=device_forwardOptions
