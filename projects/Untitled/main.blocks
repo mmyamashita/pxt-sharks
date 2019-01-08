@@ -1,0 +1,49 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <variables>
+    <variable type="" id="E8#U;|It}dE2xs9yRHx0">light</variable>
+  </variables>
+  <block type="pxt-on-start" x="0" y="0">
+    <statement name="HANDLER">
+      <block type="turn_turnLeft">
+        <value name="deg">
+          <shadow type="device_turnLeft">
+            <field name="degrees">90</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="forward_forward">
+            <value name="lights">
+              <shadow type="device_forwardOptions">
+                <field name="distance">Forward.Once</field>
+                <value name="unit">
+                  <shadow type="device_unit"></shadow>
+                </value>
+              </shadow>
+            </value>
+            <next>
+              <block type="turn_turnLeft">
+                <value name="deg">
+                  <shadow type="device_turnLeft">
+                    <field name="degrees">Left.FortyFive</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="forward_forward">
+                    <value name="lights">
+                      <shadow type="device_forwardOptions">
+                        <field name="distance">Forward.Once</field>
+                        <value name="unit">
+                          <shadow type="device_unit"></shadow>
+                        </value>
+                      </shadow>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

@@ -62,7 +62,7 @@
 namespace turn {
     /*some parameters used for controlling the turn and length of the ServoLite board controlled :MOVE mini */
     const microSecInASecond = 1000000
-    let numberOfDegreesPerSec = 320
+    let numberOfDegreesPerSec = 270
     let total=0;
     let unit=0;
 
@@ -96,8 +96,8 @@ namespace turn {
     export function turnRight(deg:number): void {
         let timeToWait = (deg * microSecInASecond) / numberOfDegreesPerSec;// calculation done this way round to avoid zero rounding
         total=total+deg;
-        pins.servoWritePin(AnalogPin.P1, 130);
-        pins.servoWritePin(AnalogPin.P2, 130);
+        pins.servoWritePin(AnalogPin.P1, 120);
+        pins.servoWritePin(AnalogPin.P2, 120);
         control.waitMicros(timeToWait);
         stop()
     }
@@ -128,16 +128,16 @@ namespace turn {
     //% block="Turn left |%deg"
     //% deg.shadow="device_turnLeft"
     export function turnLeft(deg:number): void {
-        let timeToWait = (deg * microSecInASecond) / numberOfDegreesPerSec;// calculation done this way round to avoid zero rounding
+        let timeToWait = (deg * microSecInASecond) / 320;// calculation done this way round to avoid zero rounding
         total=total-deg;
-        pins.servoWritePin(AnalogPin.P1, 25);
-        pins.servoWritePin(AnalogPin.P2, 25);
+        pins.servoWritePin(AnalogPin.P1, 45);
+        pins.servoWritePin(AnalogPin.P2, 45);
         control.waitMicros(timeToWait);
         stop()
     }
     //%blockId=device_unit
     //%block="forward"
-    //%blockHidden=false
+    //%blockHidden=true
     //%color=#000000
     export function totalDegrees():number{
       let w=total/15
@@ -175,7 +175,7 @@ namespace forward {
     //%blockId=device_forwardOptions
     //%block="%distance |lights %unit"
     //%unit.shadow="device_unit"
-    //%blockHidden=false
+    //%blockHidden=true
     export function forwardOptions(distance: Forward, unit:number):number{
       if(distance==null) distance=Forward.Once;
       switch(distance){
@@ -194,7 +194,7 @@ namespace forward {
     export function forward(lights:number): void {
         let timeToWait = (lights * microSecInASecond) / distancePerSec; // calculation done this way round to avoid zero rounding
         pins.servoWritePin(AnalogPin.P1, 150);
-        pins.servoWritePin(AnalogPin.P2, 10);
+        pins.servoWritePin(AnalogPin.P2, 0);
         control.waitMicros(timeToWait);
         stop();
     }
