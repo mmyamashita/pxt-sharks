@@ -42,8 +42,6 @@
         "buffer.cpp",
         "buffer.ts",
         "movement.ts",
-        "neopixel.ts",
-        "ws2812b/main.ts",
         "pxtparts.json",
         "parts/speaker.svg",
         "parts/headphone.svg"

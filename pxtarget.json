@@ -8,7 +8,8 @@
     "bundleddirs": [
         "libs/core",
         "libs/radio",
-        "libs/devices"
+        "libs/devices",
+        "libs/neopixel"
     ],
     "cloud": {
         "workspace": false,
