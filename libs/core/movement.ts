@@ -62,7 +62,7 @@
 namespace turn {
     /*some parameters used for controlling the turn and length of the ServoLite board controlled :MOVE mini */
     const microSecInASecond = 1000000
-    let numberOfDegreesPerSec = 270
+    let numberOfDegreesPerSec = 245
     let total=0;
     let unit=0;
 
@@ -72,7 +72,7 @@ namespace turn {
     export function stop(): void {
         pins.analogWritePin(AnalogPin.P1, 0);
         pins.analogWritePin(AnalogPin.P2, 0);
-        control.waitMicros(200000);
+        control.waitMicros(2000000)
     }
 
     /**
@@ -99,7 +99,8 @@ namespace turn {
         pins.servoWritePin(AnalogPin.P1, 120);
         pins.servoWritePin(AnalogPin.P2, 120);
         control.waitMicros(timeToWait);
-        stop()
+        stop();
+        control.waitMicros(1000000)
     }
 
     /**
@@ -133,7 +134,8 @@ namespace turn {
         pins.servoWritePin(AnalogPin.P1, 45);
         pins.servoWritePin(AnalogPin.P2, 45);
         control.waitMicros(timeToWait);
-        stop()
+        stop();
+        control.waitMicros(1000000)
     }
     //%blockId=device_unit
     //%block="forward"
@@ -210,6 +212,7 @@ namespace forward {
     export function stop(): void {
         pins.analogWritePin(AnalogPin.P1, 0);
         pins.analogWritePin(AnalogPin.P2, 0);
+        control.waitMicros(2000000)
     }
 
 	/**

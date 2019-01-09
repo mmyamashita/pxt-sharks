@@ -43,6 +43,10 @@
         "buffer.ts",
         "movement.ts",
         "pxtparts.json",
+        "main.ts",
+        "neopixel.ts",
+        "sendBuffer.asm",
+        ".travis.yml",
         "parts/speaker.svg",
         "parts/headphone.svg"
     ],

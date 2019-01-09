@@ -1,0 +1,55 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <variables>
+    <variable type="" id="7z:U;{AEwYb99c!%q-6/">range</variable>
+    <variable type="" id="kgof6oiSK8DShCpd,8N,">strip</variable>
+  </variables>
+  <block type="pxt-on-start" x="0" y="0">
+    <statement name="HANDLER">
+      <block type="variables_set">
+        <field name="VAR" id="kgof6oiSK8DShCpd,8N," variabletype="">strip</field>
+        <value name="VALUE">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+          <block type="neopixel_create">
+            <field name="pin">DigitalPin.P0</field>
+            <field name="mode">NeoPixelMode.RGB</field>
+            <value name="numleds">
+              <shadow type="math_number">
+                <field name="NUM">24</field>
+              </shadow>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="neopixel_set_brightness">
+            <value name="strip">
+              <block type="variables_get">
+                <field name="VAR" id="kgof6oiSK8DShCpd,8N," variabletype="">strip</field>
+              </block>
+            </value>
+            <value name="brightness">
+              <shadow type="math_number">
+                <field name="NUM">255</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="neopixel_set_strip_color">
+                <value name="strip">
+                  <block type="variables_get">
+                    <field name="VAR" id="kgof6oiSK8DShCpd,8N," variabletype="">strip</field>
+                  </block>
+                </value>
+                <value name="rgb">
+                  <shadow type="neopixel_colors">
+                    <field name="color">NeoPixelColors.Red</field>
+                  </shadow>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
