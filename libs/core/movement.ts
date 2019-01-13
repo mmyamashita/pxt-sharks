@@ -8,7 +8,6 @@
 
  enum Right {
    //%block="90"
-   //% jres=icons.90R
    Ninety=90,
    //%block="60"
    Sixty=60,

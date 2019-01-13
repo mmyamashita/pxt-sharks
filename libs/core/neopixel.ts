@@ -60,6 +60,7 @@ namespace neopixel {
          */
         //% blockId="neopixel_set_strip_color" block="%strip|show color %rgb=neopixel_colors"
         //% parts="neopixel"
+        //% deprecated=true
         showColor(rgb: number) {
             rgb = rgb >> 0;
             this.setAllRGB(rgb);
@@ -73,6 +74,7 @@ namespace neopixel {
          */
         //% blockId="neopixel_set_strip_rainbow" block="%strip|show rainbow from %startHue|to %endHue"
         //% parts="neopixel"
+        //% deprecated=true
         showRainbow(startHue: number = 1, endHue: number = 360) {
             if (this._length <= 0) return;
 
@@ -139,6 +141,7 @@ namespace neopixel {
         //% blockId=neopixel_show_bar_graph block="%strip|show bar graph of %value|up to %high"
         //% icon="\uf080"
         //% parts="neopixel"
+        //%deprecated=true
         showBarGraph(value: number, high: number): void {
             if (high <= 0) {
                 this.clear();
@@ -175,6 +178,7 @@ namespace neopixel {
          */
         //% blockId="neopixel_set_pixel_color" block="%strip|set pixel color at %pixeloffset|to %rgb=neopixel_colors"
         //% parts="neopixel" advanced=false
+        //%deprecated =true
         setPixelColor(pixeloffset: number, rgb: number): void {
             this.setPixelRGB(pixeloffset >> 0, rgb >> 0);
         }
@@ -185,6 +189,7 @@ namespace neopixel {
          */
         //% blockId=neopixel_set_matrix_width block="%strip|set matrix width %width"
         //% parts="neopixel" advanced=false
+        //%deprecated =true
         setMatrixWidth(width: number) {
             this._matrixWidth = Math.min(this._length, width >> 0);
         }
@@ -198,6 +203,7 @@ namespace neopixel {
          */
         //% blockId="neopixel_set_matrix_color" block="%strip|set matrix color at x %x|y %y|to %rgb=neopixel_colors"
         //% parts="neopixel" advanced=false
+        //%deprecated =true
         setMatrixColor(x: number, y: number, rgb: number) {
             if (this._matrixWidth <= 0) return; // not a matrix, ignore
             x = x >> 0;
@@ -216,6 +222,7 @@ namespace neopixel {
          */
         //% blockId="neopixel_set_pixel_white" block="%strip|set pixel white LED at %pixeloffset|to %white"
         //% parts="neopixel" advanced=false
+        //%deprecated =true
         setPixelWhiteLED(pixeloffset: number, white: number): void {
             if (this._mode === NeoPixelMode.RGBW) {
                 this.setPixelW(pixeloffset >> 0, white >> 0);
@@ -227,6 +234,7 @@ namespace neopixel {
          */
         //% blockId="neopixel_show" block="%strip|show"
         //% parts="neopixel"
+        //% blockHidden=true
         show() {
             ws2812b.sendBuffer(this.buf, this.pin);
         }
@@ -237,6 +245,7 @@ namespace neopixel {
          */
         //% blockId="neopixel_clear" block="%strip|clear"
         //% parts="neopixel"
+        //% blockHidden=true
         clear(): void {
             const stride = this._mode === NeoPixelMode.RGBW ? 4 : 3;
             this.buf.fill(0, this.start * stride, this._length * stride);
@@ -246,6 +255,7 @@ namespace neopixel {
          * Gets the number of pixels declared on the strip
          */
         //% blockId="neopixel_length" block="%strip|length"
+        //% blockHidden =true
         length() {
             return this._length;
         }
@@ -255,6 +265,7 @@ namespace neopixel {
          * @param brightness a measure of LED brightness in 0-255. eg: 255
          */
         //% blockId="neopixel_set_brightness" block="%strip|set brightness %brightness"
+        //% blockHidden=true
         setBrightness(brightness: number): void {
             this.brightness = brightness & 0xff;
         }
@@ -264,6 +275,7 @@ namespace neopixel {
          **/
         //% blockId="neopixel_each_brightness" block="%strip|ease brightness"
         //% parts="neopixel" advanced=false
+        //%blockHidden =true
         easeBrightness(): void {
             const stride = this._mode === NeoPixelMode.RGBW ? 4 : 3;
             const br = this.brightness;
@@ -293,7 +305,7 @@ namespace neopixel {
          */
         //% blockId="neopixel_range" block="%strip|range from %start|with %length|leds"
         //% parts="neopixel"
-        //% blockSetVariable=range
+        //% deprecated=true
         range(start: number, length: number): Strip {
             start = start >> 0;
             length = length >> 0;
@@ -315,6 +327,7 @@ namespace neopixel {
          */
         //% blockId="neopixel_shift" block="%strip|shift pixels by %offset"
         //% parts="neopixel"
+        //% deprecated=true
         shift(offset: number = 1): void {
             offset = offset >> 0;
             const stride = this._mode === NeoPixelMode.RGBW ? 4 : 3;
@@ -328,6 +341,7 @@ namespace neopixel {
          */
         //% blockId="neopixel_rotate" block="%strip|rotate pixels by %offset"
         //% parts="neopixel"
+        //% deprecated = true
         rotate(offset: number = 1): void {
             offset = offset >> 0;
             const stride = this._mode === NeoPixelMode.RGBW ? 4 : 3;
@@ -338,6 +352,7 @@ namespace neopixel {
          * Set the pin where the neopixel is connected, defaults to P0.
          */
         //% parts="neopixel" advanced=false
+        //% blockHidden=true
         setPin(pin: DigitalPin): void {
             this.pin = pin;
             pins.digitalWritePin(this.pin, 0);
@@ -349,6 +364,7 @@ namespace neopixel {
          */
         //% blockId=neopixel_power block="%strip|power (mA)"
         //% advanced=false
+        //% blockHidden=true
         power(): number {
             const stride = this._mode === NeoPixelMode.RGBW ? 4 : 3;
             const end = this.start + this._length;
@@ -452,6 +468,7 @@ namespace neopixel {
      */
     //% blockId="neopixel_create" block="%color |light"
     //%shadow.color="neopixel_colors"
+    //% blockSetVariable=strip
     //% parts="neopixel"
     export function create(color:NeoPixelColors): Strip {
         let strip = new Strip();
@@ -475,6 +492,7 @@ namespace neopixel {
      */
     //% blockId="neopixel_rgb" block="red %red|green %green|blue %blue"
     //% advanced=false
+    //% blockHidden=true
     export function rgb(red: number, green: number, blue: number): number {
         return packRGB(red, green, blue);
     }
@@ -484,6 +502,7 @@ namespace neopixel {
     */
     //% blockId="neopixel_colors" block="%color"
     //% advanced=false
+    //% blockHidden=true
     export function colors(color: NeoPixelColors): number {
         return color;
     }
@@ -511,6 +530,7 @@ namespace neopixel {
      * @param l luminosity from 0 to 99
      */
     //% blockId=neopixelHSL block="hue %h|saturation %s|luminosity %l"
+    //% blockHidden=true
     export function hsl(h: number, s: number, l: number): number {
         h = Math.round(h);
         s = Math.round(s);
