@@ -4,7 +4,9 @@
   "name": "makecode.microbit.org",
   "title": "Microsoft MakeCode for micro:bit",
   "description": "A Blocks / JavaScript code editor for the micro:bit powered by Microsoft MakeCode.",
-  "corepkg": "core",
+  "corepkg": [
+    "core"
+  ],
   "cloud": {
     "workspace": false,
     "packages": false,
