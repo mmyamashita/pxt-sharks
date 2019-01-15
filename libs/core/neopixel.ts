@@ -2,26 +2,24 @@
  * Well known colors for a NeoPixel strip
  */
 enum NeoPixelColors {
-    //% block=red
+    //% block="red light"
     Red = 0xFF0000,
-    //% block=orange
+    //% block="orange light"
     Orange = 0xFFA500,
-    //% block=yellow
+    //% block="yellow light"
     Yellow = 0xFFFF00,
-    //% block=green
+    //% block="green light"
     Green = 0x00FF00,
-    //% block=blue
+    //% block="blue light"
     Blue = 0x0000FF,
-    //% block=indigo
+    //% block="indigo light"
     Indigo = 0x4b0082,
-    //% block=violet
+    //% block="violet light"
     Violet = 0x8a2be2,
-    //% block=purple
+    //% block="purple light"
     Purple = 0xFF00FF,
-    //% block=white
+    //% block="white light"
     White = 0xFFFFFF,
-    //% block=black
-    Black = 0x000000
 }
 
 /**
@@ -466,8 +464,8 @@ namespace neopixel {
      * @param pin the pin where the neopixel is connected.
      * @param numleds number of leds in the strip, eg: 24,30,60,64
      */
-    //% blockId="neopixel_create" block="%color |light"
-    //%shadow.color="neopixel_colors"
+    //% blockId="neopixel_create" block="%color"
+    //% color.shadow="neopixel_colors"
     //% blockSetVariable=strip
     //% parts="neopixel"
     export function create(color:NeoPixelColors): Strip {
@@ -481,6 +479,7 @@ namespace neopixel {
         strip.setBrightness(255);
         strip.setPin(DigitalPin.P0);
         strip.showColor(color);
+        control.waitMicros(4000000)
         return strip;
     }
 

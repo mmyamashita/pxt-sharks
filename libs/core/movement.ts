@@ -10,11 +10,11 @@
    //%block="90"
    Ninety=90,
    //%block="60"
-   Sixty=60,
+   Sixty=64,
    //%block="45"
    FortyFive=45,
    //%block="30"
-   Thirty=30,
+   Thirty=27,
    //%block="15"
    Fifeteen=15
  }
@@ -24,11 +24,11 @@
    //% jres=icons.90L
    Ninety=90,
    //%block="60"
-   Sixty=60,
+   Sixty=64,
    //%block="45"
    FortyFive=45,
    //%block="30"
-   Thirty=30,
+   Thirty=27,
    //% block="15"
    Fifeteen=15
  }
@@ -71,7 +71,7 @@ namespace turn {
     export function stop(): void {
         pins.analogWritePin(AnalogPin.P1, 0);
         pins.analogWritePin(AnalogPin.P2, 0);
-        control.waitMicros(2000000)
+        control.waitMicros(1000000)
     }
 
     /**
@@ -84,22 +84,29 @@ namespace turn {
         if(degrees==null) degrees=Right.Ninety
         switch(degrees){
           case Right.Ninety:return 90;
-          case Right.Sixty:return 60;
+          case Right.Sixty:return 63.5;
           case Right.FortyFive:return 45;
-          case Right.Thirty:return 30;
+          case Right.Thirty:return 26.6;
           default: return 90
         }
     }
     //%block="Turn right |%deg"
     //%deg.shadow="device_turnRight"
     export function turnRight(deg:number): void {
-        let timeToWait = (deg * microSecInASecond) / numberOfDegreesPerSec;// calculation done this way round to avoid zero rounding
-        total=total+deg;
-        pins.servoWritePin(AnalogPin.P1, 120);
-        pins.servoWritePin(AnalogPin.P2, 120);
+        let timeToWait = (deg * microSecInASecond) / 150;// calculation done this way round to avoid zero rounding
+        pins.servoWritePin(AnalogPin.P1, 160);
+        pins.servoWritePin(AnalogPin.P2, 160);
         control.waitMicros(timeToWait);
+        if (deg==90||deg==45){
+          total=total+deg;
+        }
+        else if (deg==63.5){
+          total=total+60;
+        }
+        else if(deg==26.6){
+          total=total+30;
+        }
         stop();
-        control.waitMicros(1000000)
     }
 
     /**
@@ -112,9 +119,9 @@ namespace turn {
         if(degrees==null) degrees=Left.Ninety
         switch(degrees){
           case Left.Ninety:return 90;
-          case Left.Sixty:return 60;
+          case Left.Sixty:return 63.5;
           case Left.FortyFive:return 45;
-          case Left.Thirty:return 30;
+          case Left.Thirty:return 26.6;
           default: return 90
         }
     }
@@ -128,18 +135,25 @@ namespace turn {
     //% block="Turn left |%deg"
     //% deg.shadow="device_turnLeft"
     export function turnLeft(deg:number): void {
-        let timeToWait = (deg * microSecInASecond) / 320;// calculation done this way round to avoid zero rounding
-        total=total-deg;
-        pins.servoWritePin(AnalogPin.P1, 45);
-        pins.servoWritePin(AnalogPin.P2, 45);
+        let timeToWait = (deg * microSecInASecond) / 150;// calculation done this way round to avoid zero rounding
+        pins.servoWritePin(AnalogPin.P1, 20);
+        pins.servoWritePin(AnalogPin.P2, 20);
         control.waitMicros(timeToWait);
         stop();
-        control.waitMicros(1000000)
+        if (deg==90||deg==45){
+          total=total-deg;
+        }
+        else if (deg==63.5){
+          total=total-60;
+        }
+        else if(deg==26.6){
+          total=total-30;
+        }
     }
     //%blockId=device_unit
     //%block="forward"
     //%blockHidden=true
-    //%color=#000000
+    //%color=#808389
     export function totalDegrees():number{
       let w=total/15
       if (w%6==0){
@@ -170,11 +184,12 @@ namespace forward {
 
     /*some parameters used for controlling the turn and length of the ServoLite board controlled :MOVE mini */
     const microSecInASecond = 1000000
-    const diam = 2.25*25.4;
+    const diam = 1*25.4;
     let distancePerSec = diam*3.14;
 
     //%blockId=device_forwardOptions
     //%block="%distance |lights %unit"
+    //% color=#808389
     //%unit.shadow="device_unit"
     //%blockHidden=true
     export function forwardOptions(distance: Forward, unit:number):number{
@@ -211,7 +226,7 @@ namespace forward {
     export function stop(): void {
         pins.analogWritePin(AnalogPin.P1, 0);
         pins.analogWritePin(AnalogPin.P2, 0);
-        control.waitMicros(2000000)
+        control.waitMicros(500000)
     }
 
 	/**
