@@ -1,0 +1,74 @@
+CACHE MANIFEST
+
+CACHE:
+/pxt-sharks/semantic.js
+/pxt-sharks/main.js
+/pxt-sharks/pxtapp.js
+/pxt-sharks/typescript.js
+/pxt-sharks/marked/marked.min.js
+/pxt-sharks/highlight.js/highlight.pack.js
+/pxt-sharks/jquery.js
+/pxt-sharks/pxtlib.js
+/pxt-sharks/pxtcompiler.js
+/pxt-sharks/pxtblockly.js
+/pxt-sharks/pxtwinrt.js
+/pxt-sharks/pxteditor.js
+/pxt-sharks/pxtsim.js
+/pxt-sharks/pxtembed.js
+/pxt-sharks/pxtworker.js
+/pxt-sharks/pxtweb.js
+/pxt-sharks/blockly.css
+/pxt-sharks/semantic.css
+/pxt-sharks/rtlsemantic.css
+
+
+/pxt-sharks/editor.js
+/pxt-sharks/fieldeditors.js
+
+# blockly
+/pxt-sharks/blockly/media/sprites.png
+/pxt-sharks/blockly/media/click.mp3
+/pxt-sharks/blockly/media/disconnect.wav
+/pxt-sharks/blockly/media/delete.mp3
+
+# monaco; keep in sync with webapp/public/index.html
+/pxt-sharks/vs/loader.js
+/pxt-sharks/vs/base/worker/workerMain.js
+/pxt-sharks/vs/basic-languages/src/bat.js
+/pxt-sharks/vs/basic-languages/src/cpp.js
+/pxt-sharks/vs/editor/editor.main.css
+/pxt-sharks/vs/editor/editor.main.js
+/pxt-sharks/vs/editor/editor.main.nls.js
+/pxt-sharks/vs/language/json/jsonMode.js
+/pxt-sharks/vs/language/json/jsonWorker.js
+/pxt-sharks/vs/language/typescript/lib/typescriptServices.js
+/pxt-sharks/vs/language/typescript/src/mode.js
+/pxt-sharks/vs/language/typescript/src/worker.js
+
+# charts
+/pxt-sharks/smoothie/smoothie_compressed.js
+/pxt-sharks/images/Bars_black.gif
+
+# ai
+/pxt-sharks/ai.0.js
+
+/pxt-sharks/worker.js
+/pxt-sharks/monacoworker.js
+
+# ver Sun Jan 20 2019 14:19:27 GMT-0800 (Pacific Standard Time)
+
+# target
+/pxt-sharks/docs\static\logo.portrait.white.svg
+/pxt-sharks/docs\static\logo.square.white.svg
+/pxt-sharks/docs\static\logo.square.white.svg
+/pxt-sharks/docs\static\logo.portrait.black.svg
+/pxt-sharks/docs\static\icons\apple-touch-icon.png
+/pxt-sharks/docs\static\icons\apple-touch-icon.png
+/pxt-sharks/docs\static\Microsoft-logo_rgb_c-gray-square.png
+/pxt-sharks/docs\static\Microsoft-logo_rgb_c-white.png
+/pxt-sharks/docs\static\hero.png
+
+/pxt-sharks/target.js
+  
+NETWORK:
+*
