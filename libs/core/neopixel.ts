@@ -468,7 +468,7 @@ namespace basic {
     //% color.shadow="neopixel_colors"
     //% blockSetVariable=strip
     //% parts="neopixel"
-    //%color=#ffb638
+    //%color=#f7cb1d
     export function create(color:NeoPixelColors): Strip {
         let strip = new Strip();
         let stride = NeoPixelMode.RGBW ? 4 : 3;
