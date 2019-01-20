@@ -7,6 +7,8 @@
  */
 
  enum Right {
+   //% block="180"
+   OneEighty=180,
    //%block="90"
    Ninety=90,
    //%block="60"
@@ -15,13 +17,12 @@
    FortyFive=45,
    //%block="30"
    Thirty=27,
-   //%block="15"
-   Fifeteen=15
  }
 
  enum Left {
+   //% block="180"
+   OneEighty=180,
    //%block="90"
-   //% jres=icons.90L
    Ninety=90,
    //%block="60"
    Sixty=64,
@@ -29,35 +30,20 @@
    FortyFive=45,
    //%block="30"
    Thirty=27,
-   //% block="15"
-   Fifeteen=15
  }
 
  enum Forward{
-   //%block="1"
+   //%block="1 light"
    Once=1,
-   //%block="2"
+   //%block="2 lights"
    Twice=2,
-   //%block="3"
+   //%block="3 lights"
    Thrice=3,
-   //%block="4"
+   //%block="4 lights"
    Fourth=4
  }
 
- enum Degrees{
-   //%block="mul of 15"
-   Little=1,
-   //%block="mul of 30"
-   Medium=2,
-   //%block="mul of 45"
-   Half=3,
-   //%block="mul of 60"
-   More=4,
-   //%block="mul of 90"
-   All=6
- }
-
-//% weight=100 color=#8042f4 icon="\uf0a9" block="Turning"
+//% weight=100 color=#d32cd3 icon="\uf0a9" block="Turning"
 namespace turn {
     /*some parameters used for controlling the turn and length of the ServoLite board controlled :MOVE mini */
     const microSecInASecond = 1000000
@@ -83,6 +69,7 @@ namespace turn {
      export function rightOptions (degrees?: Right):number {
         if(degrees==null) degrees=Right.Ninety
         switch(degrees){
+          case Right.OneEighty:return 180
           case Right.Ninety:return 90;
           case Right.Sixty:return 63.5;
           case Right.FortyFive:return 45;
@@ -90,14 +77,14 @@ namespace turn {
           default: return 90
         }
     }
-    //%block="Turn right |%deg"
+    //%block="Turn RIGHT |%deg"
     //%deg.shadow="device_turnRight"
     export function turnRight(deg:number): void {
         let timeToWait = (deg * microSecInASecond) / 150;// calculation done this way round to avoid zero rounding
         pins.servoWritePin(AnalogPin.P1, 160);
         pins.servoWritePin(AnalogPin.P2, 160);
         control.waitMicros(timeToWait);
-        if (deg==90||deg==45){
+        if (deg==90||deg==45||deg==180){
           total=total+deg;
         }
         else if (deg==63.5){
@@ -118,6 +105,7 @@ namespace turn {
      export function leftOptions (degrees?: Left):number {
         if(degrees==null) degrees=Left.Ninety
         switch(degrees){
+          case Left.OneEighty:return 180;
           case Left.Ninety:return 90;
           case Left.Sixty:return 63.5;
           case Left.FortyFive:return 45;
@@ -132,7 +120,7 @@ namespace turn {
     * Runs the servos at slower than the right function to reduce wheel slip
     * @param deg how far to turn, eg: 90
     */
-    //% block="Turn left |%deg"
+    //% block="Turn LEFT |%deg"
     //% deg.shadow="device_turnLeft"
     export function turnLeft(deg:number): void {
         let timeToWait = (deg * microSecInASecond) / 150;// calculation done this way round to avoid zero rounding
@@ -140,7 +128,7 @@ namespace turn {
         pins.servoWritePin(AnalogPin.P2, 20);
         control.waitMicros(timeToWait);
         stop();
-        if (deg==90||deg==45){
+        if (deg==90||deg==45||deg==180){
           total=total-deg;
         }
         else if (deg==63.5){
@@ -153,7 +141,7 @@ namespace turn {
     //%blockId=device_unit
     //%block="forward"
     //%blockHidden=true
-    //%color=#808389
+    //%color=#444444
     export function totalDegrees():number{
       let w=total/15
       if (w%6==0){
@@ -175,7 +163,7 @@ namespace turn {
 /**
  * Blocks for driving the Kitronik Servo:Lite Board
  */
-//% weight=100 color=#000000 icon="\uf01b" block="Forward"
+//% weight=100 color=#444444 icon="\uf01b" block="Forward"
 namespace forward {
 
 	/************************************************************************************************************************************************
@@ -183,32 +171,47 @@ namespace forward {
 	************************************************************************************************************************************************/
 
     /*some parameters used for controlling the turn and length of the ServoLite board controlled :MOVE mini */
-    const microSecInASecond = 1000000
+    const microSecInASecond = 1444444
     const diam = 1*25.4;
     let distancePerSec = diam*3.14;
 
-    //%blockId=device_forwardOptions
-    //%block="%distance |lights %unit"
-    //% color=#808389
-    //%unit.shadow="device_unit"
-    //%blockHidden=true
-    export function forwardOptions(distance: Forward, unit:number):number{
-      if(distance==null) distance=Forward.Once;
-      switch(distance){
-        case Forward.Once: return 1*unit;
-        case Forward.Twice: return 2*unit;
-        case Forward.Thrice: return 3*unit;
-        case Forward.Fourth:return 4*unit;
-        default: return 1*unit
-      }
-    }
     /**
      * Drives forwards. Call stop to stop
      */
-    //% block="drive |%lights"
-    //% lights.shadow="device_forwardOptions"
-    export function forward(lights:number): void {
+    //% block="drive |%lights 1 light" color=#444444
+    //% lights.shadow="device_unit"
+    export function forward1(lights:number): void {
         let timeToWait = (lights * microSecInASecond) / distancePerSec; // calculation done this way round to avoid zero rounding
+        pins.servoWritePin(AnalogPin.P1, 150);
+        pins.servoWritePin(AnalogPin.P2, 0);
+        control.waitMicros(timeToWait);
+        stop();
+    }
+
+    //% block="drive |%lights 2 lights" color=#444444
+    //% lights.shadow="device_unit"
+    export function forward2(lights:number): void {
+        let timeToWait = (lights * 2 * microSecInASecond) / distancePerSec; // calculation done this way round to avoid zero rounding
+        pins.servoWritePin(AnalogPin.P1, 150);
+        pins.servoWritePin(AnalogPin.P2, 0);
+        control.waitMicros(timeToWait);
+        stop();
+    }
+
+    //% block="drive |%lights 3 lights" color=#444444
+    //% lights.shadow="device_unit"
+    export function forward3(lights:number): void {
+        let timeToWait = (lights * 3 * microSecInASecond) / distancePerSec; // calculation done this way round to avoid zero rounding
+        pins.servoWritePin(AnalogPin.P1, 150);
+        pins.servoWritePin(AnalogPin.P2, 0);
+        control.waitMicros(timeToWait);
+        stop();
+    }
+
+    //% block="drive |%lights 4 lights" color=#444444
+    //% lights.shadow="device_unit"
+    export function forward4(lights:number): void {
+        let timeToWait = (lights * 4 * microSecInASecond) / distancePerSec; // calculation done this way round to avoid zero rounding
         pins.servoWritePin(AnalogPin.P1, 150);
         pins.servoWritePin(AnalogPin.P2, 0);
         control.waitMicros(timeToWait);

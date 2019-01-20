@@ -9,7 +9,7 @@
 
 @primaryColor: @teal;
 
-@teal: #3891A6;
+@teal: #3ba1ba;
 @blue: #3454D1;
 @red: #EF767A;
 @pink: #F46197;

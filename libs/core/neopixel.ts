@@ -37,8 +37,8 @@ enum NeoPixelMode {
 /**
  * Functions to operate NeoPixel strips.
  */
-//% weight=100 color=#2699BF icon="\uf110" block="Lights"
-namespace neopixel {
+//% weight=100 color=#1E90FF icon="\uf110"
+namespace basic {
     /**
      * A NeoPixel strip
      */
@@ -160,7 +160,7 @@ namespace neopixel {
                 for (let i = 0; i < n; ++i) {
                     if (i <= v) {
                         const b = Math.idiv(i * 255, n1);
-                        this.setPixelColor(i, neopixel.rgb(b, 0, 255 - b));
+                        this.setPixelColor(i, basic.rgb(b, 0, 255 - b));
                     }
                     else this.setPixelColor(i, 0);
                 }
@@ -468,6 +468,7 @@ namespace neopixel {
     //% color.shadow="neopixel_colors"
     //% blockSetVariable=strip
     //% parts="neopixel"
+    //%color=#ffb638
     export function create(color:NeoPixelColors): Strip {
         let strip = new Strip();
         let stride = NeoPixelMode.RGBW ? 4 : 3;
