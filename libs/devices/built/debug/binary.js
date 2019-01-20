@@ -28,7 +28,7 @@ switch (step) {
     r0 = s.tmp_1;
     globals.distancePerSec___340 = (r0);
     s.tmp_0 = { fn: addListener__P204, parent: s };
-    r0 = inline__P394;
+    r0 = inline__P396;
     s.tmp_0.arg0 = r0;
     s.pc = 2;
     return actionCall(s.tmp_0)
@@ -42,7 +42,7 @@ _main___P1.continuations = [  ]
 
 
 
-var inline__P394  = function (s) {
+var inline__P396  = function (s) {
 var r0 = s.r0, step = s.pc;
 s.pc = -1;
 while (true) {
@@ -54,7 +54,7 @@ switch (step) {
       s.arg0 = (s.lambdaArgs[0]);
       s.lambdaArgs = null;
     }
-    s.tmp_0 = { fn: __log__P393, parent: s };
+    s.tmp_0 = { fn: __log__P395, parent: s };
     r0 = s.arg0;
     s.tmp_0.arg0 = r0;
     s.pc = 2;
@@ -64,11 +64,11 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-inline__P394.info = {"start":310,"length":29,"line":13,"column":24,"endLine":13,"endColumn":53,"fileName":"pxt_modules/bluetooth/bluetooth.ts","functionName":"inline"}
+inline__P396.info = {"start":310,"length":29,"line":13,"column":24,"endLine":13,"endColumn":53,"fileName":"pxt_modules/bluetooth/bluetooth.ts","functionName":"inline"}
 
 
 
-var __log__P393  = function (s) {
+var __log__P395  = function (s) {
 var r0 = s.r0, step = s.pc;
 s.pc = -1;
 while (true) {
@@ -83,7 +83,7 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-__log__P393.info = {"start":227,"length":58,"line":10,"column":4,"endLine":12,"endColumn":5,"fileName":"pxt_modules/bluetooth/bluetooth.ts","functionName":"__log"}
+__log__P395.info = {"start":227,"length":58,"line":10,"column":4,"endLine":12,"endColumn":5,"fileName":"pxt_modules/bluetooth/bluetooth.ts","functionName":"__log"}
 
 
 
