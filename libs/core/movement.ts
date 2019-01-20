@@ -171,14 +171,14 @@ namespace forward {
 	************************************************************************************************************************************************/
 
     /*some parameters used for controlling the turn and length of the ServoLite board controlled :MOVE mini */
-    const microSecInASecond = 1444444
+    const microSecInASecond = 1000000
     const diam = 1*25.4;
     let distancePerSec = diam*3.14;
 
     /**
      * Drives forwards. Call stop to stop
      */
-    //% block="drive |%lights 1 light" color=#444444
+    //% block="Drive |%lights 1 light" color=#444444
     //% lights.shadow="device_unit"
     export function forward1(lights:number): void {
         let timeToWait = (lights * microSecInASecond) / distancePerSec; // calculation done this way round to avoid zero rounding
@@ -188,7 +188,7 @@ namespace forward {
         stop();
     }
 
-    //% block="drive |%lights 2 lights" color=#444444
+    //% block="Drive |%lights 2 lights" color=#444444
     //% lights.shadow="device_unit"
     export function forward2(lights:number): void {
         let timeToWait = (lights * 2 * microSecInASecond) / distancePerSec; // calculation done this way round to avoid zero rounding
@@ -198,7 +198,7 @@ namespace forward {
         stop();
     }
 
-    //% block="drive |%lights 3 lights" color=#444444
+    //% block="Drive |%lights 3 lights" color=#444444
     //% lights.shadow="device_unit"
     export function forward3(lights:number): void {
         let timeToWait = (lights * 3 * microSecInASecond) / distancePerSec; // calculation done this way round to avoid zero rounding
@@ -208,7 +208,7 @@ namespace forward {
         stop();
     }
 
-    //% block="drive |%lights 4 lights" color=#444444
+    //% block="Drive |%lights 4 lights" color=#444444
     //% lights.shadow="device_unit"
     export function forward4(lights:number): void {
         let timeToWait = (lights * 4 * microSecInASecond) / distancePerSec; // calculation done this way round to avoid zero rounding
