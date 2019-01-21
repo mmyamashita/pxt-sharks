@@ -2,22 +2,4 @@
   <variables>
     <variable type="" id="kgof6oiSK8DShCpd,8N,">strip</variable>
   </variables>
-  <block type="pxt-on-start" x="0" y="0">
-    <statement name="HANDLER">
-      <block type="forward_forward2">
-        <value name="lights">
-          <shadow type="device_unit"></shadow>
-        </value>
-        <next>
-          <block type="turn_turnRight">
-            <value name="deg">
-              <shadow type="device_turnRight">
-                <field name="degrees">Right.OneEighty</field>
-              </shadow>
-            </value>
-          </block>
-        </next>
-      </block>
-    </statement>
-  </block>
 </xml>

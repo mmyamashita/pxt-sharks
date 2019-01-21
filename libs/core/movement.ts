@@ -141,7 +141,7 @@ namespace turn {
     //%blockId=device_unit
     //%block="forward"
     //%blockHidden=true
-    //%color=#444444
+    //%color=#5b5b5b
     export function totalDegrees():number{
       let w=total/15
       if (w%6==0){
@@ -163,7 +163,7 @@ namespace turn {
 /**
  * Blocks for driving the Kitronik Servo:Lite Board
  */
-//% weight=100 color=#444444 icon="\uf01b" block="Forward"
+//% weight=100 color=#5b5b5b icon="\uf01b" block="Forward"
 namespace forward {
 
 	/************************************************************************************************************************************************
@@ -178,7 +178,7 @@ namespace forward {
     /**
      * Drives forwards. Call stop to stop
      */
-    //% block="Drive |%lights 1 light" color=#444444
+    //% block="Drive |%lights 1 light" color=#5b5b5b
     //% lights.shadow="device_unit"
     export function forward1(lights:number): void {
         let timeToWait = (lights * microSecInASecond) / distancePerSec; // calculation done this way round to avoid zero rounding
@@ -188,7 +188,7 @@ namespace forward {
         stop();
     }
 
-    //% block="Drive |%lights 2 lights" color=#444444
+    //% block="Drive |%lights 2 lights" color=#5b5b5b
     //% lights.shadow="device_unit"
     export function forward2(lights:number): void {
         let timeToWait = (lights * 2 * microSecInASecond) / distancePerSec; // calculation done this way round to avoid zero rounding
@@ -198,7 +198,7 @@ namespace forward {
         stop();
     }
 
-    //% block="Drive |%lights 3 lights" color=#444444
+    //% block="Drive |%lights 3 lights" color=#5b5b5b
     //% lights.shadow="device_unit"
     export function forward3(lights:number): void {
         let timeToWait = (lights * 3 * microSecInASecond) / distancePerSec; // calculation done this way round to avoid zero rounding
@@ -208,7 +208,7 @@ namespace forward {
         stop();
     }
 
-    //% block="Drive |%lights 4 lights" color=#444444
+    //% block="Drive |%lights 4 lights" color=#5b5b5b
     //% lights.shadow="device_unit"
     export function forward4(lights:number): void {
         let timeToWait = (lights * 4 * microSecInASecond) / distancePerSec; // calculation done this way round to avoid zero rounding

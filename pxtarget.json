@@ -359,7 +359,7 @@
         },
         "blockColors": {
             "logic": "#00A4A6",
-            "loops": "#00AA00",
+            "loops": "#30c947",
             "math": "#9400D3",
             "variables": "#1E90FF",
             "text": "#B8860B",
