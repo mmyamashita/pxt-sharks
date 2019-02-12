@@ -15,7 +15,7 @@ switch (step) {
     r0 = globals.listeners___201;
     r0 = undefined;
     globals.listeners___201 = (r0);
-    r0 = (1.25 * 25.4);
+    r0 = (0.75 * 25.4);
     s.tmp_0 = r0;
     r0 = globals.diam___339;
     r0 = s.tmp_0;

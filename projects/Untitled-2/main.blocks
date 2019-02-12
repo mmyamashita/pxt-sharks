@@ -15,7 +15,7 @@
           </block>
         </value>
         <next>
-          <block type="forward_forward1">
+          <block type="forward_forward4">
             <value name="lights">
               <shadow type="device_unit"></shadow>
             </value>

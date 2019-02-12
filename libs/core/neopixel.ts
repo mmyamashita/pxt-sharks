@@ -11,7 +11,7 @@ enum NeoPixelColors {
     //% block="green light"
     Green = 0x00FF00,
     //% block="blue light"
-    Blue = 0x0000FF,
+    Blue = 0x5050FF,
     //% block="indigo light"
     Indigo = 0x4b0082,
     //% block="violet light"
