@@ -4,20 +4,18 @@
   </variables>
   <block type="pxt-on-start" x="0" y="0">
     <statement name="HANDLER">
-      <block type="variables_set">
-        <field name="VAR" id="kgof6oiSK8DShCpd,8N," variabletype="">strip</field>
-        <value name="VALUE">
-          <shadow type="math_number">
-            <field name="NUM">0</field>
+      <block type="turn_turnRight">
+        <value name="deg">
+          <shadow type="device_turnRight">
+            <field name="degrees">Right.OneEighty</field>
           </shadow>
-          <block type="neopixel_create">
-            <field name="color">NeoPixelColors.Blue</field>
-          </block>
         </value>
         <next>
-          <block type="forward_forward4">
-            <value name="lights">
-              <shadow type="device_unit"></shadow>
+          <block type="turn_turnLeft">
+            <value name="deg">
+              <shadow type="device_turnLeft">
+                <field name="degrees">90</field>
+              </shadow>
             </value>
           </block>
         </next>

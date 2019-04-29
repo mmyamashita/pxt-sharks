@@ -80,9 +80,9 @@ namespace turn {
     //%block="Turn RIGHT |%deg"
     //%deg.shadow="device_turnRight"
     export function turnRight(deg:number): void {
-        let timeToWait = (deg * microSecInASecond) / 150;// calculation done this way round to avoid zero rounding
-        pins.servoWritePin(AnalogPin.P1, 160);
-        pins.servoWritePin(AnalogPin.P2, 160);
+        let timeToWait = (deg * microSecInASecond) / 112;// calculation done this way round to avoid zero rounding
+        pins.servoWritePin(AnalogPin.P1, 180);
+        pins.servoWritePin(AnalogPin.P2, 180);
         control.waitMicros(timeToWait);
         if (deg==90||deg==45||deg==180){
           total=total+deg;
@@ -123,9 +123,9 @@ namespace turn {
     //% block="Turn LEFT |%deg"
     //% deg.shadow="device_turnLeft"
     export function turnLeft(deg:number): void {
-        let timeToWait = (deg * microSecInASecond) / 150;// calculation done this way round to avoid zero rounding
-        pins.servoWritePin(AnalogPin.P1, 20);
-        pins.servoWritePin(AnalogPin.P2, 20);
+        let timeToWait = (deg * microSecInASecond) / 120;// calculation done this way round to avoid zero rounding
+        pins.servoWritePin(AnalogPin.P1, 0);
+        pins.servoWritePin(AnalogPin.P2, 0);
         control.waitMicros(timeToWait);
         stop();
         if (deg==90||deg==45||deg==180){
@@ -148,7 +148,7 @@ namespace turn {
         unit=7*25.4;
       }
       else if(w%2==0){
-        unit=15.65*25.4;
+        unit=15.6*25.4;
       }
       else if (w%3==0){
         unit=9.8*25.4;
@@ -172,8 +172,8 @@ namespace forward {
 
     /*some parameters used for controlling the turn and length of the ServoLite board controlled :MOVE mini */
     const microSecInASecond = 1000000
-    const diam = .75*25.4;
-    let distancePerSec = diam*3.14;
+    const diam = .785*25.4;
+    let distancePerSec = diam*3.14*1; //dis per cycle * cylces per sec
 
     /**
      * Drives forwards. Call stop to stop

@@ -2,24 +2,24 @@
  * Well known colors for a NeoPixel strip
  */
 enum NeoPixelColors {
-    //% block="red light"
-    Red = 0xFF0000,
-    //% block="orange light"
-    Orange = 0xFFA500,
-    //% block="yellow light"
-    Yellow = 0xFFFF00,
-    //% block="green light"
-    Green = 0x00FF00,
-    //% block="blue light"
-    Blue = 0x5050FF,
-    //% block="indigo light"
-    Indigo = 0x4b0082,
-    //% block="violet light"
-    Violet = 0x8a2be2,
-    //% block="purple light"
-    Purple = 0xFF00FF,
-    //% block="white light"
-    White = 0xFFFFFF,
+  //% block=red
+  Red = 0xFF0000,
+  //% block=orange
+  Orange = 0xFFA500,
+  //% block=yellow
+  Yellow = 0xFFFF00,
+  //% block=green
+  Green = 0x00FF00,
+  //% block=blue
+  Blue = 0x0000FF,
+  //% block=indigo
+  Indigo = 0x4b0082,
+  //% block=violet
+  Violet = 0x8a2be2,
+  //% block=purple
+  Purple = 0xFF00FF,
+  //% block=white
+  White = 0xFFFFFF,
 }
 
 /**

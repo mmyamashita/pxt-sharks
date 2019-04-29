@@ -1,3 +1,2 @@
-let strip: basic.Strip = null
-strip = basic.create(NeoPixelColors.Blue)
-forward.forward4(turn.totalDegrees())
+turn.turnRight(turn.rightOptions(Right.OneEighty))
+turn.turnLeft(turn.leftOptions(90))

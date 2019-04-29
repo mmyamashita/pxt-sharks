@@ -12,7 +12,7 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0)) return null;
 switch (step) {
   case 0:
 
-    r0 = (0.75 * 25.4);
+    r0 = (0.785 * 25.4);
     s.tmp_0 = r0;
     r0 = globals.diam___339;
     r0 = s.tmp_0;
@@ -21,8 +21,10 @@ switch (step) {
     s.tmp_0 = r0;
     r0 = (s.tmp_0 * 3.14);
     s.tmp_1 = r0;
+    r0 = (s.tmp_1 * 1);
+    s.tmp_2 = r0;
     r0 = globals.distancePerSec___340;
-    r0 = s.tmp_1;
+    r0 = s.tmp_2;
     globals.distancePerSec___340 = (r0);
     return leave(s, r0)
   default: oops()
