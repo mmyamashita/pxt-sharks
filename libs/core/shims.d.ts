@@ -937,5 +937,23 @@ declare namespace control {
     //% shim=control::createBuffer
     function createBuffer(size: int32): Buffer;
 }
+declare namespace forward {
+
+    /**
+     * Get the current compass heading in degrees.
+     */
+    //% help=input/compass-heading
+    //% weight=56
+    //% blockId=device_heading block="compass heading (°)" blockGap=8
+    //% parts="compass" shim=forward::compassHeading
+    function compassHeading(): int32;
+
+    /**
+     * Gets the number of milliseconds elapsed since power on.
+     */
+    //% help=input/running-time weight=50 blockGap=8
+    //% blockId=device_get_running_time block="running time (ms)" shim=forward::runningTime
+    function runningTime(): int32;
+}
 
 // Auto-generated. Do not edit. Really.

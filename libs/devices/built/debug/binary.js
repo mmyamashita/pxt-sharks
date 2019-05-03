@@ -12,25 +12,25 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0)) return null;
 switch (step) {
   case 0:
 
-    r0 = globals.listeners___201;
+    r0 = globals.listeners___203;
     r0 = undefined;
-    globals.listeners___201 = (r0);
+    globals.listeners___203 = (r0);
     r0 = (0.785 * 25.4);
     s.tmp_0 = r0;
-    r0 = globals.diam___339;
+    r0 = globals.diam___341;
     r0 = s.tmp_0;
-    globals.diam___339 = (r0);
-    r0 = globals.diam___339;
+    globals.diam___341 = (r0);
+    r0 = globals.diam___341;
     s.tmp_0 = r0;
     r0 = (s.tmp_0 * 3.14);
     s.tmp_1 = r0;
     r0 = (s.tmp_1 * 1);
     s.tmp_2 = r0;
-    r0 = globals.distancePerSec___340;
+    r0 = globals.distancePerSec___342;
     r0 = s.tmp_2;
-    globals.distancePerSec___340 = (r0);
-    s.tmp_0 = { fn: addListener__P204, parent: s };
-    r0 = inline__P396;
+    globals.distancePerSec___342 = (r0);
+    s.tmp_0 = { fn: addListener__P206, parent: s };
+    r0 = inline__P400;
     s.tmp_0.arg0 = r0;
     s.pc = 2;
     return actionCall(s.tmp_0)
@@ -44,7 +44,7 @@ _main___P1.continuations = [  ]
 
 
 
-var inline__P396  = function (s) {
+var inline__P400  = function (s) {
 var r0 = s.r0, step = s.pc;
 s.pc = -1;
 while (true) {
@@ -56,7 +56,7 @@ switch (step) {
       s.arg0 = (s.lambdaArgs[0]);
       s.lambdaArgs = null;
     }
-    s.tmp_0 = { fn: __log__P395, parent: s };
+    s.tmp_0 = { fn: __log__P399, parent: s };
     r0 = s.arg0;
     s.tmp_0.arg0 = r0;
     s.pc = 2;
@@ -66,11 +66,11 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-inline__P396.info = {"start":310,"length":29,"line":13,"column":24,"endLine":13,"endColumn":53,"fileName":"pxt_modules/bluetooth/bluetooth.ts","functionName":"inline"}
+inline__P400.info = {"start":310,"length":29,"line":13,"column":24,"endLine":13,"endColumn":53,"fileName":"pxt_modules/bluetooth/bluetooth.ts","functionName":"inline"}
 
 
 
-var __log__P395  = function (s) {
+var __log__P399  = function (s) {
 var r0 = s.r0, step = s.pc;
 s.pc = -1;
 while (true) {
@@ -85,11 +85,11 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-__log__P395.info = {"start":227,"length":58,"line":10,"column":4,"endLine":12,"endColumn":5,"fileName":"pxt_modules/bluetooth/bluetooth.ts","functionName":"__log"}
+__log__P399.info = {"start":227,"length":58,"line":10,"column":4,"endLine":12,"endColumn":5,"fileName":"pxt_modules/bluetooth/bluetooth.ts","functionName":"__log"}
 
 
 
-var addListener__P204  = function (s) {
+var addListener__P206  = function (s) {
 var r0 = s.r0, step = s.pc;
 s.pc = -1;
 while (true) {
@@ -113,7 +113,7 @@ switch (step) {
     { step = 2; continue; }
   case 1:
   case 2:
-    r0 = globals.listeners___201;
+    r0 = globals.listeners___203;
     s.tmp_3 = r0;
     r0 = pxsim.numops.toBoolDecr(s.tmp_3);
     s.tmp_4 = r0;
@@ -123,13 +123,13 @@ switch (step) {
     if (!r0) { step = 3; continue; }
     r0 = pxsim.Array_.mk();
     s.tmp_6 = r0;
-    r0 = globals.listeners___201;
+    r0 = globals.listeners___203;
     r0 = s.tmp_6;
-    globals.listeners___201 = (r0);
+    globals.listeners___203 = (r0);
     { step = 4; continue; }
   case 3:
   case 4:
-    r0 = globals.listeners___201;
+    r0 = globals.listeners___203;
     s.tmp_0 = r0;
     r0 = s.arg0;
     s.tmp_1 = r0;
@@ -138,7 +138,7 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-addListener__P204.info = {"start":1263,"length":191,"line":46,"column":4,"endLine":51,"endColumn":5,"fileName":"pxt_modules/core/console.ts","functionName":"addListener"}
+addListener__P206.info = {"start":1263,"length":191,"line":46,"column":4,"endLine":51,"endColumn":5,"fileName":"pxt_modules/core/console.ts","functionName":"addListener"}
 
 
 setupDebugger(1)

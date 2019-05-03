@@ -2,24 +2,5 @@
   <variables>
     <variable type="" id="kgof6oiSK8DShCpd,8N,">strip</variable>
   </variables>
-  <block type="pxt-on-start" x="0" y="0">
-    <statement name="HANDLER">
-      <block type="turn_turnRight">
-        <value name="deg">
-          <shadow type="device_turnRight">
-            <field name="degrees">Right.OneEighty</field>
-          </shadow>
-        </value>
-        <next>
-          <block type="turn_turnLeft">
-            <value name="deg">
-              <shadow type="device_turnLeft">
-                <field name="degrees">90</field>
-              </shadow>
-            </value>
-          </block>
-        </next>
-      </block>
-    </statement>
-  </block>
+  <block type="pxt-on-start" x="0" y="0"></block>
 </xml>

@@ -41,6 +41,7 @@
         "serial.ts",
         "buffer.cpp",
         "buffer.ts",
+        "movement.cpp",
         "movement.ts",
         "pxtparts.json",
         "main.ts",

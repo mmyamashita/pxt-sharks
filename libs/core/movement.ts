@@ -174,6 +174,8 @@ namespace forward {
     const microSecInASecond = 1000000
     const diam = .785*25.4;
     let distancePerSec = diam*3.14*1; //dis per cycle * cylces per sec
+    let p1 = 0;
+    let p2 = 180;
 
     /**
      * Drives forwards. Call stop to stop
@@ -181,11 +183,21 @@ namespace forward {
     //% block="Drive |%lights 1 light" color=#5b5b5b
     //% lights.shadow="device_unit"
     export function forward1(lights:number): void {
-        let timeToWait = (lights * microSecInASecond) / distancePerSec; // calculation done this way round to avoid zero rounding
-        pins.servoWritePin(AnalogPin.P1, 0);
-        pins.servoWritePin(AnalogPin.P2, 180);
-        control.waitMicros(timeToWait);
-        stop();
+      let originalHeading = compassHeading();
+      let timeToWait = (lights * microSecInASecond) / distancePerSec; // calculation done this way round to avoid zero rounding
+      pins.servoWritePin(AnalogPin.P1, p1);
+      pins.servoWritePin(AnalogPin.P2, p2);
+      while (timeToWait < runningTime()) {
+        let currentHeading = compassHeading();
+        if (currentHeading < (originalHeading+2)){
+          p1 = p1 - 10;
+          pins.servoWritePin(AnalogPin.P1, p1);
+        } else if (currentHeading >(originalHeading -2)) {
+          p2 = p2 - 10;
+          pins.servoWritePin(AnalogPin.P2,p2);
+        }
+      }
+      stop();
     }
 
     //% block="Drive |%lights 2 lights" color=#5b5b5b
