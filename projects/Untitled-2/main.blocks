@@ -2,5 +2,38 @@
   <variables>
     <variable type="" id="kgof6oiSK8DShCpd,8N,">strip</variable>
   </variables>
-  <block type="pxt-on-start" x="0" y="0"></block>
+  <block type="pxt-on-start" x="0" y="0">
+    <statement name="HANDLER">
+      <block type="variables_set">
+        <field name="VAR" id="kgof6oiSK8DShCpd,8N," variabletype="">strip</field>
+        <value name="VALUE">
+          <shadow type="math_number">
+            <field name="NUM">0</field>
+          </shadow>
+          <block type="neopixel_create">
+            <field name="color">NeoPixelColors.Yellow</field>
+          </block>
+        </value>
+        <next>
+          <block type="forward_forward1">
+            <value name="lights">
+              <shadow type="device_unit"></shadow>
+            </value>
+            <next>
+              <block type="forward_forward4">
+                <value name="lights">
+                  <shadow type="device_unit"></shadow>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="forward_forward2" disabled="true" x="129" y="214">
+    <value name="lights">
+      <shadow type="device_unit"></shadow>
+    </value>
+  </block>
 </xml>
